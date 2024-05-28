@@ -1,8 +1,8 @@
 package com.iudigital.sinhilos;
 
 
-import com.iudigital.clienteproducto.ClienteProducto;
-import com.iudigital.clienteproducto.Producto;
+import com.iudigital.domain.ClienteProducto;
+import com.iudigital.domain.Producto;
 import java.util.Arrays;
 
 public class CajeraProductoPrincipal

@@ -1,7 +1,7 @@
 package com.iudigital.conhilos;
 
-import com.iudigital.clienteproducto.ClienteProducto;
-import com.iudigital.clienteproducto.Producto;
+import com.iudigital.domain.ClienteProducto;
+import com.iudigital.domain.Producto;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.iudigital.clienteproducto;
+package com.iudigital.domain;
 
 
 import java.util.List;
