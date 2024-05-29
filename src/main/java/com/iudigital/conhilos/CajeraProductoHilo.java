@@ -17,7 +17,7 @@ public class CajeraProductoHilo extends Thread {
 
     @Override
     public void run() {
-        long tiempoInicio = System.currentTimeMillis(); // Captura el tiempo de inicio del procesamiento
+        long tiempoInicio = System.currentTimeMillis(); // Captura el tiempo de inicio del procesamiento        
 
         System.out.println("La cajera " + this.nombreCajera + " comienza a procesar la compra del cliente "
                 + cliente.getNombre() + " en el tiempo " + (System.currentTimeMillis() - tiempoInicio) / 1000
@@ -27,13 +27,8 @@ public class CajeraProductoHilo extends Thread {
         int contProducto = 1;  // Contador para el número de producto
 
         for (Producto producto : cliente.getProductos()) {
+            esperarXSegundos(); // Espera fija de 1 segundo
 
-            try {
-                Thread.sleep((long) (producto.getCantidad() * 1000)); // Simula el tiempo de procesamiento en segundos
-                total += producto.getPrecio() * producto.getCantidad();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
             System.out.println("Procesando el producto " + contProducto
                     + " del cliente " + cliente.getNombre()
                     + " producto " + producto.getNombre()
@@ -42,7 +37,7 @@ public class CajeraProductoHilo extends Thread {
                     + " costo total del producto " + producto.getCantidad() * producto.getPrecio()
                     + " ->Tiempo: " + (System.currentTimeMillis() - tiempoInicio) / 1000 + " seg");
 
-
+            total += producto.getPrecio() * producto.getCantidad();
             contProducto++;
         }
 
@@ -53,5 +48,13 @@ public class CajeraProductoHilo extends Thread {
 
     }
 
-    
+    private void esperarXSegundos() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            System.out.println("El hilo fue interrumpido mientras esperaba.");
+        }
+    }
+
 }

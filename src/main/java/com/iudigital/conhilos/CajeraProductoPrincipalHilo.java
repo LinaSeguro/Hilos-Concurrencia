@@ -9,9 +9,9 @@ import java.util.List;
 public class CajeraProductoPrincipalHilo {
     public static void main(String[] args) {
         // Crear algunos productos
-        Producto p1 = new Producto("Laptop", 1500000, 1);  // Laptop, $1,500,000 COP
-        Producto p2 = new Producto("Teléfono", 800000, 1); // Teléfono, $800,000 COP
-        Producto p3 = new Producto("Tablet", 500000, 2);   // Tablet, $500,000 COP por unidad
+        Producto p1 = new Producto("Laptop", 1500000, 1); 
+        Producto p2 = new Producto("Teléfono", 800000, 1); 
+        Producto p3 = new Producto("Tablet", 500000, 2);   
 
         // Crear algunos clientes con productos
         List<Producto> productosCliente1 = Arrays.asList(p1, p2);
